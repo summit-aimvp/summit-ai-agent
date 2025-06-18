@@ -25,6 +25,7 @@ jobs:
       - name: Build and Push Docker image
         run: |
           gcloud builds submit \
+            --region=global \
             --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/summit-ai \
             --project=${{ secrets.GCP_PROJECT_ID }} \
             --verbosity=debug
@@ -37,4 +38,3 @@ jobs:
             --region us-central1 \
             --allow-unauthenticated \
             --project=${{ secrets.GCP_PROJECT_ID }}
-            
