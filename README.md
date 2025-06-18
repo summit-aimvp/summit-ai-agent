@@ -1,1 +1,3 @@
-# summit-ai-agent
+# Summit AI
+
+Autonomous AI agent powered by LangChain and OpenAI.
