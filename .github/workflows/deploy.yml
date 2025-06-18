@@ -25,10 +25,9 @@ jobs:
       - name: Build and Push Docker image
         run: |
           gcloud builds submit \
-            --region=global \
+            --region=us-central1 \
             --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/summit-ai \
-            --project=${{ secrets.GCP_PROJECT_ID }} \
-            --verbosity=debug
+            --project=${{ secrets.GCP_PROJECT_ID }}
 
       - name: Deploy to Cloud Run
         run: |
