@@ -24,7 +24,10 @@ jobs:
 
       - name: Build and Push Docker image
         run: |
-          gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/summit-ai --project=${{ secrets.GCP_PROJECT_ID }}
+          gcloud builds submit \
+            --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/summit-ai \
+            --project=${{ secrets.GCP_PROJECT_ID }} \
+            --verbosity=debug
 
       - name: Deploy to Cloud Run
         run: |
@@ -34,3 +37,4 @@ jobs:
             --region us-central1 \
             --allow-unauthenticated \
             --project=${{ secrets.GCP_PROJECT_ID }}
+            
