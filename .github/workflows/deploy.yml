@@ -17,10 +17,11 @@ jobs:
       with:
         credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-    - name: Set up Cloud SDK
+        - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v2
       with:
-        project_id: '${{ secrets.GCP_PROJECT_ID }}'
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+
 
         - name: Build and Push Docker image
       run: |
